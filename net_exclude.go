@@ -44,7 +44,7 @@ type Net struct {
 }
 
 func (net *Net) Contains(child *Net) bool {
-  if (net.Addr & Mask(net.Masklen)) == (child.Addr & Mask(net.Masklen)) {
+  if (net.Addr & Mask(net.Masklen)) == (child.Addr & Mask(net.Masklen)) && net.Masklen <= child.Masklen {
     return true
   } else {
     return false
