@@ -171,6 +171,9 @@ func main() {
     os.Exit(1)
   }
 
+  if exclude_net.Contains(start_net) {
+    return
+  }
 
   start_net.Exclude(exclude_net)
 
