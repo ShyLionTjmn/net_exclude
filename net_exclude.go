@@ -113,7 +113,7 @@ func main() {
   var err error
 
   if len(os.Args) < 3 {
-    fmt.Fprintln(os.Stderr, "USAGE: "+os.Args[0]+" n.n.n.n/n x.x.x.x/x [...]\n\tn.n.n.n/n - network to use\n\tx.x.x.x/x - networks to exclude")
+    fmt.Fprintln(os.Stderr, "USAGE: "+os.Args[0]+" n.n.n.n/n x.x.x.x/x [...]\n\tn.n.n.n/n - network to use\n\tx.x.x.x/x - networks to exclude, omit /x for /32")
     os.Exit(1)
   }
 
