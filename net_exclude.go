@@ -89,9 +89,16 @@ func (net *Net) Split() []*Net {
   return ret
 }
 
+func (net *Net) Equals(check_net *Net) bool {
+  return net.Addr == check_net.Addr && net.Masklen == check_net.Masklen
+}
+
 func (net *Net) Exclude(exclude_nets []*Net) {
   contains := false
   for _, exclude_net := range exclude_nets {
+    if net.Equals(exclude_net) {
+      return
+    }
     if net.Contains(exclude_net) {
       contains = true
       break
